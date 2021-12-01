@@ -1,14 +1,14 @@
 resource "azurerm_public_ip" "example" {
   name                = "Tfpip1"
-  resource_group_name = azurerm_resource_group.example.name
-  location            = azurerm_resource_group.example.location
+  resource_group_name = tfrg1
+  location            = west europe
   allocation_method   = "Static"
 }
 
 resource "azurerm_virtual_network" "example" {
   name                = "virtualNetwork1"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
+  location            = west europe
+  resource_group_name = tfrg1
   address_space       = ["10.0.0.0/16"]
   dns_servers         = ["10.0.0.4", "10.0.0.5"]
   subnet {
